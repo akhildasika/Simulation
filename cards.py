@@ -1,3 +1,5 @@
+import random
+
 deck = []
 suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
 
@@ -30,7 +32,18 @@ for i in range (1, 4):
         elif(o == 13):
             value = "K"
         deck.append(f"[{value} {suits[i]}]")
+    
 
-print(deck)
+def randomize (deck, o): 
+    for i in range(o-1,0,-1): 
+        j = random.randint(0,i+1) 
+  
+
+        deck[i],deck[j] = deck[j],deck[i] 
+    return deck
+
+
+
+print(randomize(deck, o))
 
         
