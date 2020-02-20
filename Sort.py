@@ -1,3 +1,5 @@
+import sys
+
 def bubbleSort(arr):
     n = len(arr)
  
@@ -24,11 +26,21 @@ print(arr3)
 print(arr4)
 
 
-def deal():
-    d=[]
-    s=["♠","♥","♦","♣"]
-    f={1:"A",11:"J",12:"Q",13:"K"}
-    for i in range(4):
-        for j in range(1,14):
-            d.append(f"{f[j] if j in f else j}{s[i]}")
-    return d
+
+
+A = [64, 25, 12, 22, 11] 
+  
+ 
+for i in range(len(A)): 
+    min_idx = i 
+    for j in range(i+1, len(A)): 
+        if A[min_idx] > A[j]: 
+            min_idx = j 
+              
+       
+    A[i], A[min_idx] = A[min_idx], A[i] 
+  
+
+print ("Sorted array") 
+for i in range(len(A)): 
+    print("%d" %A[i]),  
